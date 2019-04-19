@@ -1,6 +1,3 @@
-from nltk.tokenize import sent_tokenize, word_tokenize
-
-
 class Parsing(object):
 
     specialCharacters = ['>', '<','|','*']
@@ -13,7 +10,7 @@ class Parsing(object):
         self.arg = []
 
     def tokens(self):
-        self.commandsArgument = word_tokenize(self.line)
+        self.commandsArgument = self.line.split()
         self._seperateCommandsArgs()
         self.getCommandsArgsExc()
   
@@ -52,8 +49,9 @@ class Parsing(object):
 
 
 if __name__=="__main__" :
-
-    text = './sss |'
+    '''
+    debugging 
+    text = 'cd ..'
 
     par = Parsing(text)
     par.tokens()
@@ -62,5 +60,5 @@ if __name__=="__main__" :
     print(str(x)+' '+str(c)+' '+str(r))
     ss = par.specialChars()
     print(str(ss))
-    
-    
+    '''
+   
